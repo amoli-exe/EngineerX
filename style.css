@@ -44,8 +44,14 @@ header {
     margin-bottom: 2rem;
 }
 
-.logo {
+.graphiceralogo {
     height: 80px; /* Adjust this value to make logos bigger or smaller */
+    width: auto;
+    object-fit: contain;
+}
+
+.techgeekslogo {
+    height: 250px; /* Adjust this value to make logos bigger or smaller */
     width: auto;
     object-fit: contain;
 }
