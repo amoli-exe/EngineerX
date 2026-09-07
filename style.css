@@ -172,17 +172,19 @@ body {
 .poster-wrapper {
     position: relative;
     width: 100%;
+    aspect-ratio: 9/16;
     background: #f1f5f9;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .poster-wrapper img {
     width: 100%;
-    aspect-ratio: 9/16;
-    max-height: 48vh;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
+    max-height: none;
     display: block;
 }
 
