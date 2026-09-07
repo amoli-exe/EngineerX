@@ -1,14 +1,15 @@
 :root {
-    --bg-dark: #000000;
-    --card-bg: #060000;
-    --text-primary: #f0f2f8;
-    --text-muted: #f5f6f9;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
     
-    /* Neon accents matching each banner */
-    --color-design: #ff2a85;
-    --color-esports: #ff9800;
-    --color-sudoku: #00b0ff;
-    --color-techquiz: #ff5722;
+    /* Vibrant accents */
+    --color-design: #e11d48;
+    --color-esports: #ea580c;
+    --color-sudoku: #0284c7;
+    --color-techquiz: #7c3aed;
 }
 
 * {
@@ -19,7 +20,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     color: var(--text-primary);
     line-height: 1.5;
     min-height: 100vh;
@@ -30,59 +31,62 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1.5rem 1.5rem;
-    background: rgb(245, 245, 245);
-    border-bottom: 1px solid rgba(198, 10, 10, 0.08);
+    padding: 2.5rem 1.5rem 1.8rem;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
 }
+
 
 .top-partners {
     display: inline-flex;
     align-items: center;
-    gap: 2rem;
-    padding: 0.6rem 1.8rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50px;
-    backdrop-filter: blur(8px);
-    margin-bottom: 1.5rem;
-}
-
-.partner-logo {
-    height: 38px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-}
-
-.partner-logo.graphic-era {
-    background: #ffffff;
-    
-    padding: 3px 8px;
+    gap: 1.75rem;
+    padding: 0;
+    background: transparent;
+    margin-bottom: 1.25rem;
 }
 
 .divider {
     width: 1px;
-    height: 24px;
-    background: rgba(255, 255, 255, 0.2);
+    height: 28px;
+    background: #cbd5e1;
+}
+
+/* Individual Logo Classes */
+.logo-graphic-era {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    filter: none;
+}
+
+.logo-tech-geeks {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    filter: none;
 }
 
 .event-brand {
     text-align: center;
 }
 
-.main-logo {
-    height: clamp(55px, 8vw, 85px);
+.logo-engineerx {
+    height: clamp(55px, 8vw, 80px);
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.45));
 }
 
 .tagline {
-    font-size: 0.85rem;
-    letter-spacing: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 3.5px;
     font-weight: 700;
     color: var(--text-muted);
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
 }
 
 /* Container & Titles */
@@ -94,9 +98,10 @@ body {
 
 .section-title {
     text-align: center;
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    font-weight: 800;
     margin-bottom: 2rem;
 }
 
@@ -143,22 +148,23 @@ body {
     grid-area: 1 / 1;
     backface-visibility: hidden;
     background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .event-card:hover .event-card-front {
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
 }
 
 .event-card-back {
     transform: rotateY(180deg);
-    padding: 0.1rem;
+    padding: 0.5rem;
     justify-content: center;
 }
 
@@ -166,7 +172,7 @@ body {
 .poster-wrapper {
     position: relative;
     width: 100%;
-    background: #000;
+    background: #f1f5f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +180,7 @@ body {
 
 .poster-wrapper img {
     width: 100%;
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 9/16;
     max-height: 48vh;
     object-fit: cover;
     display: block;
@@ -182,7 +188,7 @@ body {
 
 /* Card Content */
 .event-info {
-    padding: 1.2rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -190,13 +196,14 @@ body {
 
 .event-info h3 {
     font-size: 1.2rem;
+    font-weight: 700;
     margin-bottom: 0.4rem;
 }
 
 .event-info p {
     font-size: 0.88rem;
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.45;
     margin-bottom: 1.2rem;
     flex-grow: 1;
 }
@@ -204,9 +211,9 @@ body {
 .details-list {
     list-style: none;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
-    margin: 1rem 0 1.5rem;
+    margin: 0.8rem 0 1.2rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -214,6 +221,17 @@ body {
 
 .details-list strong {
     color: var(--text-primary);
+}
+
+.contact-sublist {
+    margin-top: 0.25rem;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+}
+
+.contact-sublist li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* Button UI */
@@ -226,8 +244,8 @@ body {
 
 .card-details-btn,
 .card-register-btn {
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.82rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 6px;
@@ -242,29 +260,24 @@ body {
 }
 
 .card-details-btn {
-    background: transparent;
+    background: #f8fafc;
     color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .card-details-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: #f1f5f9;
+    border-color: #cbd5e1;
 }
 
-/* Per-Event Neon Accents */
+/* Accents */
 .theme-design .card-register-btn { background: var(--color-design); color: #fff; }
-.theme-esports .card-register-btn { background: var(--color-esports); color: #000; }
+.theme-esports .card-register-btn { background: var(--color-esports); color: #ffffff; }
 .theme-sudoku .card-register-btn { background: var(--color-sudoku); color: #fff; }
 .theme-techquiz .card-register-btn { background: var(--color-techquiz); color: #fff; }
 
-.theme-design:hover .event-card-front { box-shadow: 0 8px 25px rgba(255, 42, 133, 0.2); }
-.theme-esports:hover .event-card-front { box-shadow: 0 8px 25px rgba(255, 152, 0, 0.2); }
-.theme-sudoku:hover .event-card-front { box-shadow: 0 8px 25px rgba(0, 176, 255, 0.2); }
-.theme-techquiz:hover .event-card-front { box-shadow: 0 8px 25px rgba(255, 87, 34, 0.2); }
-
 .card-register-btn:hover {
-    filter: brightness(1.15);
+    filter: brightness(0.92);
     transform: translateY(-1px);
 }
 
@@ -274,5 +287,6 @@ footer {
     padding: 2rem 1rem;
     color: var(--text-muted);
     font-size: 0.8rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
+    background: #ffffff;
 }
